@@ -1,6 +1,6 @@
 package com.dsajava.sumit;
 
-public class QueueArray {
+public class QueueArray<T> {
     private Object[] queue;
     private int firstIndex;
     private int lastIndex;
@@ -21,5 +21,19 @@ public class QueueArray {
     }
     private boolean isFull() {
     	return size== queue.length;
+    }
+    public void enqueueFirst(T element) {
+    	if(isFull()) {
+    		throw new IllegalStateException("Queue is Full.");
+    	}
+    	if(isEmpty()) {
+    		firstIndex = 0;
+    		lastIndex = 0;
+    	}
+    	else {
+    		firstIndex = (firstIndex-1 + queue.length) % queue.length;
+    	}
+    	queue[firstIndex] = element;
+    	size++;
     }
 }
