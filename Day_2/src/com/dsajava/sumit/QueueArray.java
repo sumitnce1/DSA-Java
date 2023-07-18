@@ -2,6 +2,8 @@ package com.dsajava.sumit;
 
 import java.nio.channels.IllegalSelectorException;
 
+import javax.lang.model.element.Element;
+
 public class QueueArray<T> {
 	private Object[] queue;
 	private int firstIndex;
@@ -52,6 +54,24 @@ public class QueueArray<T> {
 		}
 		queue[lastIndex] = element;
 		size++;
+	}
+
+	public T dequeue() {
+		if (isEmpty()) {
+			throw new IllegalStateException("Queue is Empty.");
+		}
+		T element = (T)queue[firstIndex];
+		queue[firstIndex]= null;
+		
+		if(firstIndex == lastIndex) {
+			firstIndex = -1;
+			lastIndex = -1;
+		}
+		else {
+			firstIndex = (firstIndex+1)%queue.length;
+		}
+		size--;
+		return element;
 	}
 
 }
