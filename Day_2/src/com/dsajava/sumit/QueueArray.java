@@ -1,9 +1,5 @@
 package com.dsajava.sumit;
 
-import java.nio.channels.IllegalSelectorException;
-
-import javax.lang.model.element.Element;
-
 public class QueueArray<T> {
 	private Object[] queue;
 	private int firstIndex;
@@ -38,6 +34,7 @@ public class QueueArray<T> {
 			firstIndex = (firstIndex-1 + queue.length) % queue.length;
 		}
 		queue[firstIndex] = element;
+		System.out.println("New Element Added at First: " +element);
 		size++;
 	}
 
@@ -53,6 +50,7 @@ public class QueueArray<T> {
 			lastIndex = (lastIndex+1)% queue.length;
 		}
 		queue[lastIndex] = element;
+		System.out.println("New Element Added at Last: " +element);
 		size++;
 	}
 
@@ -72,6 +70,19 @@ public class QueueArray<T> {
 		}
 		size--;
 		return element;
+	}
+	
+	public static void main(String[] args) {
+		QueueArray<Integer> q1 = new QueueArray<>(10);
+		q1.enqueueFirst(10);
+		q1.enqueueFirst(20);
+		q1.enqueueLast(100);
+		q1.size();
+		System.out.println("Size of Queue: " +q1.size());
+		System.out.println("Element popped: " +q1.dequeue());
+		System.out.println("Element popped: " +q1.dequeue());
+		System.out.println("Element popped: " +q1.dequeue());
+		//System.out.println("Element popped: " +q1.dequeue());  //Exception in thread "main"
 	}
 
 }
