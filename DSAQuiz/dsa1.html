@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Linked List Quiz</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js" integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS" crossorigin="anonymous"></script>
+
+</head>
+<body>
+    <div class="container">
+        <div class="row justify-content-evenly align-items-center bg-dark text-white p-5 m-5 rounded-5">
+        <h1 class="text-center">Linked List Quiz</h1><hr/>
+        <form id="quizForm">
+        <!-- Question 1 -->
+        <p class="h5">1. What is a linked list?</p>
+        <input type="radio" name="q1" value="a"> a) A linear data structure<br>
+        <input type="radio" name="q1" value="b"> b) A non-linear data structure<br>
+        <input type="radio" name="q1" value="c"> c) A hierarchical data structure<br>
+        <input type="radio" name="q1" value="d"> d) A combination of data structures<br>
+        <small class="correct-answer text-success h5" data-question-number="1" style="display:none;">Correct Answer: a</small><br><br>
+
+        <!-- Question 2 -->
+        <p class="h5">2. Which of the following is the advantage of a linked list over an array?</p>
+        <input type="radio" name="q2" value="a"> a) Constant-time access to elements<br>
+        <input type="radio" name="q2" value="b"> b) Memory efficiency<br>
+        <input type="radio" name="q2" value="c"> c) Fast search operations<br>
+        <input type="radio" name="q2" value="d"> d) Automatic resizing<br>
+        <small class="correct-answer text-success h5" data-question-number="2" style="display:none;">Correct Answer: b</small><br><br>
+
+        <!-- Question 3 -->
+        <p class="h5">3. In a singly linked list, each node contains:</p>
+        <input type="radio" name="q3" value="a"> a) Only the data<br>
+        <input type="radio" name="q3" value="b"> b) Only the reference to the previous node<br>
+        <input type="radio" name="q3" value="c"> c) Only the reference to the next node<br>
+        <input type="radio" name="q3" value="d"> d) Both the data and the reference to the next node<br>
+        <small class="correct-answer text-success h5" data-question-number="3" style="display:none;">Correct Answer: d</small><br><br>
+
+        <!-- Question 4 -->
+        <p class="h5">4. In a doubly linked list, each node contains:</p>
+        <input type="radio" name="q4" value="a"> a) Only the data<br>
+        <input type="radio" name="q4" value="b"> b) Only the reference to the previous node<br>
+        <input type="radio" name="q4" value="c"> c) Only the reference to the next node<br>
+        <input type="radio" name="q4" value="d"> d) Both the reference to the previous node and the next node<br>
+        <small class="correct-answer text-success h5" data-question-number="4" style="display:none;">Correct Answer: d</small><br><br>
+
+        <!-- Question 5 -->
+        <p class="h5">5. Which operation is not possible in a singly linked list?</p>
+        <input type="radio" name="q5" value="a"> a) Traversing from the last node to the first node<br>
+        <input type="radio" name="q5" value="b"> b) Inserting a new node after a given node<br>
+        <input type="radio" name="q5" value="c"> c) Deleting a node without traversing the list<br>
+        <input type="radio" name="q5" value="d"> d) Finding the middle element of the list in one pass<br>
+        <small class="correct-answer text-success h5" data-question-number="5" style="display:none;">Correct Answer: a</small><br><br>
+
+        <!-- Question 6 -->
+        <p class="h5">6. What is the time complexity to insert a node at the end of a singly linked list?</p>
+        <input type="radio" name="q6" value="a"> a) O(1)<br>
+        <input type="radio" name="q6" value="b"> b) O(log n)<br>
+        <input type="radio" name="q6" value="c"> c) O(n)<br>
+        <input type="radio" name="q6" value="d"> d) O(n log n)<br>
+        <small class="correct-answer text-success h5" data-question-number="6" style="display:none;">Correct Answer: c</small><br><br>
+
+        <!-- Question 7 -->
+        <p class="h5">7. Which of the following operations requires O(n) time complexity in a doubly linked list?</p>
+        <input type="radio" name="q7" value="a"> a) Insertion at the beginning<br>
+        <input type="radio" name="q7" value="b"> b) Deletion from the end<br>
+        <input type="radio" name="q7" value="c"> c) Traversing from the first node to the last node<br>
+        <input type="radio" name="q7" value="d"> d) Searching for a specific element<br>
+        <small class="correct-answer text-success h5" data-question-number="7" style="display:none;">Correct Answer: d</small><br><br>
+
+        <!-- Question 8 -->
+        <p class="h5">8. The process of combining two sorted linked lists into a single sorted list is called:</p>
+        <input type="radio" name="q8" value="a"> a) Merging<br>
+        <input type="radio" name="q8" value="b"> b) Splitting<br>
+        <input type="radio" name="q8" value="c"> c) Sorting<br>
+        <input type="radio" name="q8" value="d"> d) Joining<br>
+        <small class="correct-answer text-success h5" data-question-number="8" style="display:none;">Correct Answer: a</small><br><br>
+
+        <!-- Question 9 -->
+        <p class="h5">9. Which of the following is a drawback of using linked lists?</p>
+        <input type="radio" name="q9" value="a"> a) High memory utilization<br>
+        <input type="radio" name="q9" value="b"> b) Limited operations available<br>
+        <input type="radio" name="q9" value="c"> c) Inefficient for searching elements<br>
+        <input type="radio" name="q9" value="d"> d) Difficulty in implementation<br>
+        <small class="correct-answer text-success h5" data-question-number="9" style="display:none;">Correct Answer: c</small><br><br>
+
+        <!-- Question 10 -->
+        <p class="h5">10. Which type of linked list contains a loop or cycle in its structure?</p>
+        <input type="radio" name="q10" value="a"> a) Circular linked list<br>
+        <input type="radio" name="q10" value="b"> b) Doubly linked list<br>
+        <input type="radio" name="q10" value="c"> c) Singly linked list<br>
+        <input type="radio" name="q10" value="d"> d) Unidirectional linked list<br>
+        <small class="correct-answer text-success h5" data-question-number="10" style="display:none;">Correct Answer: a</small><br><br>
+
+        <br>
+        <input type="submit" class="btn btn-success w-50" value="Submit Quiz">
+    </form>
+    <div id="quizResults" class="mt-4"></div> <!-- Div to display quiz results -->
+    </div>
+    </div>
+
+
+    <script>
+    document.getElementById("quizForm").onsubmit = function(e) {
+        e.preventDefault(); // Prevent the form from submitting and refreshing the page
+        var correctAnswers = 0;
+        var falseAnswers = 0;
+        var totalAttempted = 0;
+        var questions = document.querySelectorAll(".h5");
+
+        // Arrays to store incorrect questions and their correct answers
+        var incorrectQuestions = [];
+        var correctAnswersMessages = [];
+
+        // Helper function to get the value of the selected answer for a question
+        function getSelectedAnswer(questionNumber) {
+            var selectedAnswer = document.querySelector(`input[name="q${questionNumber}"]:checked`);
+            return selectedAnswer ? selectedAnswer.value : null;
+        }
+
+        // Check answers for each question
+        for (var i = 1; i <= 10; i++) {
+            var questionAnswer = getSelectedAnswer(i);
+            if (questionAnswer !== null) {
+                totalAttempted++;
+                var correctAnswer = document.querySelector(`.correct-answer[data-question-number="${i}"]`);
+                if (questionAnswer === correctAnswer.innerText.split(" ")[2]) {
+                    correctAnswers++;
+                } else {
+                    falseAnswers++;
+                    questions[i - 1].style.color = "red";
+                    incorrectQuestions.push(i);
+                    correctAnswersMessages.push(correctAnswer.innerText.split(" ")[2]);
+                }
+                correctAnswer.style.display = "block";
+            }
+        }
+
+        // Show correct answers for incorrect questions
+        incorrectQuestions.forEach(function(questionNumber) {
+            showCorrectAnswer(questionNumber);
+        });
+
+        // Prepare the message to display the quiz results
+        var message = `<div class="text-center"><h4 class="text-danger">Quiz Results:</h4>
+		<br>Total Correct: ${correctAnswers}<br>
+		Total Incorrect: ${falseAnswers}<br>
+		Total Attempted: ${totalAttempted}<br>
+		Total Unattempted: ${questions.length - totalAttempted} </div>`;
+        var quizResultsDiv = document.getElementById("quizResults");
+        quizResultsDiv.innerHTML = message.replace(/\n/g, "<br>");
+    }
+</script>
+
+
+</body>
+</html>
