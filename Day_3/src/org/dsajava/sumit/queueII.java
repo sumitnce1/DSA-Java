@@ -1,3 +1,4 @@
+package org.dsajava.sumit;
 
 public class queueII {
 	private Node front;
@@ -61,7 +62,15 @@ public class queueII {
 		System.err.println();
 	}
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		queueII queue = new queueII();
+		queue.enqueue(100);
+		queue.enqueue(30);
+		queue.enqueue(10);
+		System.out.println("Element at front : "+ queue.peek());
+		queue.display();
+		System.out.println("Element at front : "+ queue.dequeue());
+		System.out.println("Front: "+queue.front.data+ "\tRear: "+ queue.rear.data);
+		
 
 	}
 
