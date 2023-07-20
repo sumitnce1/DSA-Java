@@ -3,12 +3,12 @@ package org.dsajava.sumit;
 public class BST {
 
 	private TreeNode root;
-	
+
 	public static class TreeNode{
 		int val;
 		TreeNode left;
 		TreeNode right;
-		
+
 		public TreeNode(int data) {
 			val = data;
 			left = null;
@@ -18,11 +18,11 @@ public class BST {
 	public BST() {
 		this.root = null;
 	}
-	
+
 	public void insert (int val) {
 		root = insertRec(root, val);
 	}
-	
+
 	private TreeNode insertRec(TreeNode root, int val) {
 		if (root==null) {
 			System.out.println("Node Added: "+val);
@@ -36,11 +36,11 @@ public class BST {
 		}
 		return root;
 	}
-	
+
 	public void delete (int val) {
 		root = deleteRec(root, val);
 	}
-	
+
 	private TreeNode deleteRec(TreeNode root, int val) {
 		if (root == null) {
 			return null;
@@ -54,7 +54,7 @@ public class BST {
 		else {
 			if(root.left==null) {
 				return root.right;
-				
+
 			}else if(root.right == null) {
 				return root.left;
 			}
@@ -63,7 +63,7 @@ public class BST {
 		}
 		return root;
 	}
-	
+
 	public int findMin(TreeNode root) {
 		int minVal = root.val;
 		while(root.left != null) {
@@ -72,11 +72,11 @@ public class BST {
 		}
 		return minVal;
 	}
-	
+
 	public void inorder() {
 		inorderTraversal(root);
 	}
-	
+
 	private void inorderTraversal(TreeNode root) {
 		if (root!=null) {
 			inorderTraversal(root.left);
@@ -84,7 +84,30 @@ public class BST {
 			inorderTraversal(root.right);
 		}
 	}
-	
+	public void preorder() {
+		preorderTraversal(root);
+	}
+
+	private void preorderTraversal(TreeNode root) {
+		if (root != null) {
+			System.out.print(root.val + " ");
+			preorderTraversal(root.left);
+			preorderTraversal(root.right);
+		}
+	}
+
+	public void postorder() {
+		postorderTraversal(root);
+	}
+
+	private void postorderTraversal(TreeNode root) {
+		if (root != null) {
+			postorderTraversal(root.left);
+			postorderTraversal(root.right);
+			System.out.print(root.val + " ");
+		}
+	}
+
 	public static void main(String[]args) {
 		BST tree = new BST();
 		tree.insert(25);
@@ -98,6 +121,14 @@ public class BST {
 		tree.insert(20);
 		tree.insert(1);
 		tree.insert(65);
-		tree.inorder();
+		
+		System.out.println("Inorder Traversal:");
+        tree.inorder();
+
+        System.out.println("\nPreorder Traversal:");
+        tree.preorder();
+
+        System.out.println("\nPostorder Traversal:");
+        tree.postorder();
 	}
 }
