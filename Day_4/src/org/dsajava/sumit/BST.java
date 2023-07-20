@@ -136,7 +136,7 @@ public class BST {
 		if (root ==null) {
 			return;
 		}
-		System.out.println(root.val+" ");	
+		System.out.print(root.val+" ");	
 		dfs(root.left);
 		dfs(root.right);
 	}
@@ -158,18 +158,22 @@ public class BST {
 		
 		System.out.println("Inorder Traversal:");
         tree.inorder();
-
+        
         System.out.println("\nPreorder Traversal:");
         tree.preorder();
-
+        System.out.println("\n");
         System.out.println("\nPostorder Traversal:");
         tree.postorder();
-        
+        System.out.println("\n");
         System.out.println("\nBreadth-First Search:");		
 		bfs(tree.root);
-		System.out.println();
-		System.err.println("Depth First Search Algorithm: ");
+		System.out.println("\n");
+		System.out.println("Depth First Search Algorithm: ");
 		dfs(tree.root);
 		System.out.println();
+		tree.delete(15);
+		tree.delete(25);
+		System.out.println("\nPre-Order :");
+		tree.inorder();
 	}
 }
