@@ -25,6 +25,7 @@ public class BST {
 	
 	private TreeNode insertRec(TreeNode root, int val) {
 		if (root==null) {
+			System.out.println("Node Added: "+val);
 			return new TreeNode(val);
 		}
 		if(val<root.val) {
@@ -71,7 +72,32 @@ public class BST {
 		}
 		return minVal;
 	}
+	
+	public void inorder() {
+		inorderTraversal(root);
+	}
+	
+	private void inorderTraversal(TreeNode root) {
+		if (root!=null) {
+			inorderTraversal(root.left);
+			System.out.println(root.val+" ");
+			inorderTraversal(root.right);
+		}
+	}
+	
 	public static void main(String[]args) {
-		
+		BST tree = new BST();
+		tree.insert(25);
+		tree.insert(10);
+		tree.insert(8);
+		tree.insert(15);
+		tree.insert(40);
+		tree.insert(36);
+		tree.insert(50);
+		tree.insert(28);		
+		tree.insert(20);
+		tree.insert(1);
+		tree.insert(65);
+		tree.inorder();
 	}
 }
