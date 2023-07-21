@@ -83,7 +83,7 @@ public class BST {
 	private void inorderTraversal(TreeNode root) {
 		if (root!=null) {
 			inorderTraversal(root.left);
-			System.out.println(root.val+" ");
+			System.out.print(root.val+" ");
 			inorderTraversal(root.right);
 		}
 	}
@@ -143,19 +143,25 @@ public class BST {
 
 	public static void main(String[]args) {
 		BST tree = new BST();
-		TreeNode root = new TreeNode(25);
-		tree.insert(25);
-		tree.insert(10);
-		tree.insert(8);
-		tree.insert(15);
-		tree.insert(40);
-		tree.insert(36);
-		tree.insert(50);
-		tree.insert(28);		
-		tree.insert(20);
-		tree.insert(1);
-		tree.insert(65);
+		TreeNode root = new TreeNode(50);
+		/*
+		 * tree.insert(25); tree.insert(10); tree.insert(8); tree.insert(15);
+		 * tree.insert(40); tree.insert(36); tree.insert(50); tree.insert(28);
+		 * tree.insert(20); tree.insert(1); tree.insert(65);
+		 */
 		
+		tree.insert(50);
+		tree.insert(20);
+		tree.insert(66);
+		tree.insert(12);
+		tree.insert(80);
+		tree.insert(28);
+		tree.insert(55);
+		tree.insert(63);
+		tree.insert(26);
+		tree.insert(16);
+		tree.insert(52);
+		tree.insert(70);
 		System.out.println("Inorder Traversal:");
         tree.inorder();
         
@@ -171,9 +177,9 @@ public class BST {
 		System.out.println("Depth First Search Algorithm: ");
 		dfs(tree.root);
 		System.out.println();
-		tree.delete(15);
-		tree.delete(25);
-		System.out.println("\nPre-Order :");
-		tree.inorder();
+		/*
+		 * tree.delete(15); tree.delete(2 5); System.out.println("\nPre-Order :");
+		 * tree.inorder();
+		 */
 	}
 }
