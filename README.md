@@ -11,7 +11,7 @@
 
 |Days| Link|
 |-----| -------- |
-|**Day1**]| [**Day1**](https://github.com/sumitnce1/DSA-Java/tree/main/Day_1/src/com/dsajava/sumit)
+|**Day1**| [**Day1**](https://github.com/sumitnce1/DSA-Java/tree/main/Day_1/src/com/dsajava/sumit)
 |**Day2**| [**Day2**](https://github.com/sumitnce1/DSA-Java/tree/main/Day_2/src/com/dsajava/sumit)
 |**Day3**| [**Day3**](https://github.com/sumitnce1/DSA-Java/tree/main/Day_3/src/com/dsajava/sumit)
 |**Day4**| [**Day4**](https://github.com/sumitnce1/DSA-Java/tree/main/Day_4/src/com/dsajava/sumit)
