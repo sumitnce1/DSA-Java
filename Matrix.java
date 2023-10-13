@@ -52,10 +52,10 @@ public class MatrixOperations {
             }
         }
 
-        // Calculate the final result
-        int finalResult = 0;
-        for (int j = 0; j < numCols; j++) {
-            finalResult += colResults[j];
+        // Remove operators from the last row and last column
+        for (int i = 0; i < numCols - 1; i++) {
+            rowOpr[numRows - 1][i] = ' ';
+            colOpr[i][numRows - 1] = ' ';
         }
 
         // Print the matrix with operations and results
@@ -90,11 +90,9 @@ public class MatrixOperations {
         }
 
         System.out.println();
-
-        System.out.println("Final Result: " + finalResult);
     }
 
     public static void main(String[] args) {
         generateMatrix(3, 3);
     }
-                }
+}
