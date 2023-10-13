@@ -2,11 +2,9 @@ import java.util.Random;
 
 public class MatrixOperations {
     public static void main(String[] args) {
-        generateMatrixAndCheckResults(3, 3);
-    }
-
-    private static void generateMatrixAndCheckResults(int numRows, int numCols) {
         Random rand = new Random();
+        int numRows = 3;
+        int numCols = 3;
 
         int[][] matrix = new int[numRows][numCols];
         char[][] rowOperations = new char[numRows][numCols];
