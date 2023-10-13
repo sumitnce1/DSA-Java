@@ -2,49 +2,103 @@ import java.util.Random;
 
 public class MatrixOperations {
     public static void main(String[] args) {
-        int[][] matrix = new int[3][3];
-        char[] operators = {'+', '-'};
-
-        // Initialize the 3x3 matrix with random values and operations
-        Random rand = new Random();
-        for (int i = 0; i < 3; i++) {
-            for (int j = 0; j < 3; j++) {
-                matrix[i][j] = rand.nextInt(9) + 1; // Random numbers between 1 and 9
-            }
-        }
-
-        // Generate random operations
-        for (int i = 0; i < 3; i++) {
-            for (int j = 0; j < 3; j++) {
-                matrix[i][j] = matrix[i][j];
-                if (j < 2) {
-                    matrix[i][j + 1] = operators[rand.nextInt(2)]; // Random operator: + or -
-                }
-            }
-        }
-
-        // Calculate the results
-        int r1 = matrix[0][0] + matrix[0][2];
-        int r2 = matrix[1][0] - matrix[1][2];
-        int r3 = matrix[2][0] + matrix[2][2];
-
-        // Print the 3x3 matrix with operations and '=' symbols
-        for (int i = 0; i < 3; i++) {
-            for (int j = 0; j < 3; j++) {
-                System.out.print(matrix[i][j]);
-                if (j < 2) {
-                    System.out.print(" " + matrix[i][j + 1] + " ");
-                }
-            }
-            System.out.println();
-            if (i < 2) {
-                System.out.println("= = =");
-            }
-        }
-
-        // Print the results
-        System.out.println("r1 = " + r1);
-        System.out.println("r2 = " + r2);
-        System.out.println("r3 = " + r3);
+        generateMatrixAndCheckResults(3, 3);
     }
+
+    private static void generateMatrixAndCheckResults(int numRows, int numCols) {
+        Random rand = new Random();
+
+        int[][] matrix = new int[numRows][numCols];
+        char[][] rowOperations = new char[numRows][numCols];
+        char[][] colOperations = new char[numCols][numRows];
+
+        // Generate random values for the matrix
+        for (int i = 0; i < numRows; i++) {
+            for (int j = 0; j < numCols; j++) {
+                matrix[i][j] = rand.nextInt(9) + 1;
+            }
+        }
+
+        // Generate random operations for rows and columns
+        for (int i = 0; i < numRows; i++) {
+            for (int j = 0; j < numCols - 1; j++) {
+                rowOperations[i][j] = operators[rand.nextInt(2)];
+                colOperations[j][i] = rowOperations[i][j];
+            }
+        }
+
+        // Calculate row results
+        int[] rowResults = new int[numRows];
+        for (int i = 0; i < numRows; i++) {
+            rowResults[i] = matrix[i][0];
+            for (int j = 1; j < numCols; j++) {
+                if (rowOperations[i][j - 1] == '+') {
+                    rowResults[i] += matrix[i][j];
+                } else {
+                    rowResults[i] -= matrix[i][j];
+                }
+            }
+        }
+
+        // Calculate column results
+        int[] colResults = new int[numCols];
+        for (int j = 0; j < numCols; j++) {
+            colResults[j] = matrix[0][j];
+            for (int i = 1; i < numRows; i++) {
+                if (colOperations[j][i - 1] == '+') {
+                    colResults[j] += matrix[i][j];
+                } else {
+                    colResults[j] -= matrix[i][j];
+                }
+            }
+        }
+
+        // Check if the results of row and column operations match
+        boolean resultsMatch = true;
+        for (int i = 0; i < numRows; i++) {
+            if (rowResults[i] != colResults[i]) {
+                resultsMatch = false;
+                break;
+            }
+        }
+
+        // Print the matrix with operations and results
+        for (int i = 0; i < numRows; i++) {
+            for (int j = 0; j < numCols; j++) {
+                System.out.print(matrix[i][j]);
+                if (j < numCols - 1) {
+                    System.out.print(" " + rowOperations[i][j] + " ");
+                }
+            }
+            System.out.print(" = ");
+            System.out.print(rowResults[i]);
+            System.out.println();
+            if (i < numRows - 1) {
+                for (int j = 0; j < numCols; j++) {
+                    System.out.print(colOperations[j][i]);
+                    if (j < numCols - 1) {
+                        System.out.print("   ");
+                    }
+                }
+                System.out.println();
+            }
+        }
+
+        System.out.print("=   =   =   =   =   =   =   =   =   =   =\n");
+
+        for (int j = 0; j < numCols; j++) {
+            System.out.print(colResults[j]);
+            if (j < numCols - 1) {
+                System.out.print("   ");
+            }
+        }
+
+        if (resultsMatch) {
+            System.out.println("\n\nRow and column results match.");
+        } else {
+            System.out.println("\n\nRow and column results do not match.");
+        }
+    }
+
+    private static char[] operators = {'+', '-'};
 }
